@@ -1,0 +1,474 @@
+{
+  "project" : {
+    "calendar" : "general",
+    "startDate" : "1922-10-17"
+  },
+  "calendars" : {
+    "rows" : [
+      {
+        "id"        : "general",
+        "name"      : "General",
+        "intervals" : [
+          {
+            "recurrentStartDate" : "on Sat at 0:00",
+            "recurrentEndDate"   : "on Mon at 0:00",
+            "isWorking"          : false
+          }
+        ]
+      }
+    ]
+  },
+  "resources" : {
+    "rows" : [
+      { "id" : 1, "name" : "Intended Parent 1", "role" : "IP" },
+      { "id" : 2, "name" : "Intended Parent 2", "role" : "IP" },
+      { "id" : 3, "name" : "Egg Donor", "role" : "ED" },
+      { "id" : 4, "name" : "Surrogate", "role" : "Surrogate" }
+    ]
+  },
+  "tasks" : {
+    "rows" : [
+      {
+        "id"       : "1",
+        "name"     : "Triage potential recipients",
+        "eventColor" : "blue",
+        "expanded" : false,
+        "children" : [
+          { "id" : "1.1", "duration" : 3, "name" : "Update your egg donor profile" ,
+          "children" : [
+            { "id" : "1.1.1", "duration" : 3, "name" : "Medical preferences - any no-gos around cycle / medical protocol"},
+            { "id" : "1.1.2", "duration" : 3, "name" : "Travel preferences - how long clinic stipulates for travel component of cycle"},
+            { "id" : "1.1.3", "duration" : 3, "name" : "Local monitoring preferences - any favorite monitoring centers / vendors"},
+            { "id" : "1.1.4", "duration" : 3, "name" : "Timing preferences - when in the year, known blackout dates"},
+            { "id" : "1.1.5", "duration" : 42, "name" : "Recipient preferences - e.g. LGBTQ / local"}
+          ]},
+          { "id" : "1.2", "duration" : 45, "name" : "Wait for interested candidates"},
+          { "id" : "1.3", "duration" : 2, "name" : "Case manager to notify: Potential match" ,
+          "expanded" : false,
+          "children" : [
+            { "id" : "1.3.1", "duration" : 2, "name" : "Ask: How early in the “shopping” process are the IPs?"},
+            { "id" : "1.3.2", "duration" : 2, "name" : "Ask: Are the IPs already “locked into” a fertility clinic / doctor? Which one? How far is it?" },
+            { "id" : "1.3.3", "duration" : 2, "name" : "Ask: Does case manager know what medications that doctor has used for trigger?" },
+            { "id" : "1.3.4", "duration" : 2, "name" : "Ask: If nervous about clinic: Are the IPs open to changing clinic, or having eggs shipped?" },
+            { "id" : "1.3.5", "duration" : 2, "name" : "Ask: How long does the IPs' clinic require me to be in the vicinity for monitoring pre-retrieval?" },
+            { "id" : "1.3.6", "duration" : 2, "name" : "Ask: What are my local monitoring options, compatible with the fertility clinic?" },
+            { "id" : "1.3.7", "duration" : 2, "name" : "Ask: Are the IPs keen to do a repeat cycle if the outcome is not sufficient?" },
+            { "id" : "1.3.8", "duration" : 2, "name" : "Ask: Are the IPs domestic (within the US) or international (outside the US)?" },
+            { "id" : "1.3.9", "duration" : 2, "name" : "Ask: What are the IP(s)’ relationship status?" },
+            { "id" : "1.3.91", "duration" : 2, "name" : "Ask: What timeline are the IPs on (when do they need embryos by)?" },
+            { "id" : "1.3.92", "duration" : 2, "name" : "Ask: What kind of relationship would the IPs prefer with me?" }
+          ]},
+          { "id" : "1.4", "duration" : 5, "name" : "Submit previous medical records",
+          "expanded" : false,
+          "children" : [
+            { "id" : "1.4.1", "duration" : 5, "name" : "Send over fertility health information: prior AMH levels and AFC"},
+            { "id" : "1.4.2", "duration" : 5, "name" : "Send over retrieval records from past cycles: Eggs retrieved, any known embryo count / grade"},
+            { "id" : "1.4.3", "duration" : 5, "name" : "Send over retrieval protocol from past cycles: Med type, dosage strength, symptoms / side effects"},
+            { "id" : "1.4.4", "duration" : 5, "name" : "Send over genetic information: Proof of blood type, carrier screening report"},
+            { "id" : "1.4.5", "duration" : 5, "name" : "Sign medical release form: Authorizes agency to reach out to previous clinic for details"}
+          ]},
+          { "id" : "1.5", "duration" : 14, "name" : "Optional: Respond to requests for more information",
+          "expanded" : false,
+          "children" : [
+            { "id" : "1.5.1", "duration" : 14, "name" : "Provide proof of formal education / diploma / transcript"},
+            { "id" : "1.5.2", "duration" : 14, "name" : "Provide standardized testing scores (e.g. SAT, ACT)"},
+            { "id" : "1.5.3", "duration" : 14, "name" : "Provide proof of non-educational achievement - e.g. music exam certificates"},
+            { "id" : "1.5.4", "duration" : 14, "name" : "Provide more photos of siblings and parents"},
+            { "id" : "1.5.5", "duration" : 14, "name" : "Provide whole-body photos - showcase height and body type"},
+            { "id" : "1.5.6", "duration" : 14, "name" : "Provide photos with as little / no make-up as possible"},
+            { "id" : "1.5.7", "duration" : 14, "name" : "Share more about your hobbies, interests, and perspectives"},
+            { "id" : "1.5.8", "duration" : 14, "name" : "Share live videos of you talking"},
+            { "id" : "1.5.9", "duration" : 14, "name" : "Answer follow-up questions e.g. motivations, life goals"}
+          ]},
+          { "id" : "1.6", "duration" : 14, "name" : "Wait for IPs to confirm they want to proceed" }
+        ]},
+      {
+        "id"       : "2",
+        "name"     : "Reflect internally and come to a decision",
+        "eventColor" : "cyan",
+        "expanded" : false,
+        "children" : [
+          { "id" : "2.1", "duration" : 2, "name" : "Join / research community groups on Facebook / Reddit" },
+          { "id" : "2.2", "duration" : 2, "name" : "Talk to your partner / spouse (if relevant)"},
+          { "id" : "2.3", "duration" : 2, "name" : "Research other donor-specific experiences with doctor / clinic",
+          "expanded" : false,
+          "children" : [
+            { "id" : "2.3.1", "duration" : 2, "name" : "Search dr / clinic name in community groups"},
+            { "id" : "2.3.2", "duration" : 2, "name" : "Search doctor reviews on Google, FertilityIQ, etc reviews sites"}
+          ]},
+          { "id" : "2.4", "duration" : 2, "name" : "Review other donors’ real journeys",
+          "expanded" : false,
+          "children" : [
+            { "id" : "2.4.1", "duration" : 2, "name" : "Coming soon: View L’s 1x egg donor journey"},
+            { "id" : "2.4.2", "duration" : 2, "name" : "Coming soon: View M's 3x egg donor journey"},
+            { "id" : "2.4.3", "duration" : 2, "name" : "Consider your own family forming timeline"}
+          ]},
+          { "id" : "2.5", "duration" : 7, "name" : "Get comfortable with health risks",
+            "expanded" : false,
+            "children" : [
+              { "id" : "2.5.1", "duration" : 7, "name" : "Research OHSS risks and ways to avoid"},
+              { "id" : "2.5.2", "duration" : 7, "name" : "Research ovarian torsion and ways to avoid"},
+              { "id" : "2.5.3", "duration" : 7, "name" : "Research potential side effects - sweats, fatigue, mood"},
+              { "id" : "2.5.4", "duration" : 7, "name" : "Research constipation - and ways to avoid"},
+              { "id" : "2.5.5", "duration" : 7, "name" : "Research bloating - and ways to avoid"},
+              { "id" : "2.5.6", "duration" : 7, "name" : "Research longer-term reproductive health impacts"}
+            ]},
+          { "id" : "2.6", "duration" : 8, "name" : "Understand the intended parent perspective",
+            "expanded" : false,
+            "children" : [
+              { "id" : "2.6.1", "duration" : 8, "name" : "Coming soon: J, Ran out of money halfway, had to wait"},
+              { "id" : "2.6.2", "duration" : 8, "name" : "Coming soon: T, bought frozen eggs, ran out, then did a fresh cycle"},
+              { "id" : "2.6.3", "duration" : 8, "name" : "Coming soon: K, on cancer medications - unable to use own material"},
+              { "id" : "2.6.4", "duration" : 8, "name" : "Coming soon: Q, 5 miscarriages before turning to donor eggs"},
+              { "id" : "2.6.5", "duration" : 8, "name" : "Coming soon: S, concerned about passing on a genetic disorder"}
+            ]},
+          { "id" : "2.7", "duration" : 0, "name" : "Go/No-go: Decide to proceed with cycle"}
+        ]},
+      {
+        "id"       : "3",
+        "name"     : "Undergo medical clearance",
+        "eventColor" : "violet",
+        "expanded" : false,
+        "children" : [
+          { "id" : "3.1", "duration" : 7, "name" : "Secure medical screening appointment"},
+          { "id" : "3.2", "duration" : 5, "name" : "Book travel to / accommodation near retrieval clinic",
+            "expanded" : false,
+            "children" : [
+              { "id" : "3.2.1", "duration" : 3, "name" : "Confirm screening appointment with clinic coordinator & agency case manager"},
+              { "id" : "3.2.2", "duration" : 3, "name" : "Confirm reimbursement details: how, when"},
+              { "id" : "3.2.3", "duration" : 3, "name" : "Confirm daily allowance / per diem for food and travel"},
+              { "id" : "3.2.4", "duration" : 3, "name" : "Confirm transport expectations: rental car VS uber"},
+              { "id" : "3.2.5", "duration" : 3, "name" : "Coordinator to find compatible flight / transport slots based on screening appointment"},
+              { "id" : "3.2.6", "duration" : 3, "name" : "Coordinator to find compatible hotel near clinic / transport hub"}
+            ]},
+          { "id" : "3.3", "duration" : 1, "name" : "Travel to retrieval clinic for medical screening",
+            "expanded" : false,
+            "children" : [
+              { "id" : "3.3.1", "duration" : 1, "name" : "Confirm screening appointment date and time"},
+              { "id" : "3.3.2", "duration" : 1, "name" : "Confirm exact screening location (some clinics have multiple locations)"},
+              { "id" : "3.3.3", "duration" : 1, "name" : "Make accommodation plans (e.g. work / school)"},
+              { "id" : "3.3.4", "duration" : 1, "name" : "Confirm prep steps: No alcohol / drugs, full bladder, eat breakfast"}
+            ]},
+          { "id" : "3.4", "duration" : 1, "name" : "Undergo in-person medical screening",
+            "expanded" : false,
+            "children" : [
+              { "id" : "3.4.1", "duration" : 1, "name" : "Blood draw - AMH"},
+              { "id" : "3.4.2", "duration" : 1, "name" : "Blood draw - Infectious disease (FDA panel)"},
+              { "id" : "3.4.3", "duration" : 1, "name" : "Blood draw - Drug screening"},
+              { "id" : "3.4.4", "duration" : 1, "name" : "Blood draw - Nicotine screening"},
+              { "id" : "3.4.5", "duration" : 1, "name" : "Transvaginal ultrasound - Antral follicle count"},
+              { "id" : "3.4.6", "duration" : 1, "name" : "Physical - Assessment"},
+              { "id" : "3.4.7", "duration" : 1, "name" : "Walkthrough of risks and overview of process"},
+              { "id" : "3.4.8", "duration" : 1, "name" : "Optional - Blood draw, genetic testing (DNA / Karyotype)"}
+            ]},
+          { "id" : "3.5", "duration" : 14, "name" : "Wait for medical screening results"},
+          { "id" : "3.6", "duration" : 2, "name" : "Undergo genetic carrier testing (if not done previously / at clinic)",
+            "expanded" : false,
+            "children" : [
+              { "id" : "3.6.1", "duration" : 2, "name" : "Clinic sends genetic carrier test kit to ED's address (Invitae / Natera)"},
+              { "id" : "3.6.2", "duration" : 2, "name" : "ED collects saliva sample, then mails it off"}
+            ]},
+          { "id" : "3.7", "duration" : 14, "name" : "Wait for genetic carrier testing results"},
+          { "id" : "3.8", "duration" : 1, "name" : "Undergo psychiatric evaluation"},
+          { "id" : "3.9", "duration" : 1, "name" : "Undergo genetic risk assessment"},
+          { "id" : "3.91", "duration" : 0, "name" : "Achieve medical clearance from clinic"}
+        ]},
+      {
+        "id"       : "4",
+        "name"     : "Undergo legal clearance",
+        "eventColor" : "blue",
+        "expanded" : false,
+        "children" : [
+          { "id" : "4.1", "duration" : 7, "name" : "Attorney reaches out" },
+          { "id" : "4.2", "duration" : 2, "name" : "Sign attorney's Terms of Service" },
+          { "id" : "4.3", "duration" : 3, "name" : "Attorney sends over contract draft" },
+          { "id" : "4.4", "duration" : 3, "name" : "Review contract with attorney, suggest changes" },
+          { "id" : "4.5", "duration" : 1, "name" : "Your attorney sends reviewed contract to IP attorney" },
+          { "id" : "4.6", "duration" : 5, "name" : "Repeat review process w/ redlines " },
+          { "id" : "4.7", "duration" : 1, "name" : "IPs accept all changes " },
+          { "id" : "4.8", "duration" : 1, "name" : "ED accepts all changes" },
+          { "id" : "4.9", "duration" : 1, "name" : "Both sides sign contract" },
+          { "id" : "4.91", "duration" : 0, "name" : "Legal clearance achieved" }
+        ]},
+      { "id"       : "5",
+        "name"     : "Prepare for egg retrieval cycle",
+        "eventColor" : "cyan",
+        "expanded" : false,
+        "children" : [
+          { "id" : "5.1", "duration" : 1, "name" : "Coordinate birth control pills",
+            "children" : [
+              { "id" : "5.1.1", "duration" : 1, "name" : "Notify fertility clinic of your pharmacy" },
+              { "id" : "5.1.2", "duration" : 1, "name" : "Have fertility clinic send a medication order to your pharmacy" },
+              { "id" : "5.1.3", "duration" : 1, "name" : "Pick up birth control from pharmacy" },
+              { "id" : "5.1.4", "duration" : 1, "name" : "Wait for your period to start" },
+              { "id" : "5.1.5", "duration" : 1, "name" : "Start birth control on Day 2 of period" }
+            ]},
+          { "id" : "5.2", "duration" : 1, "name" : "Start birth control"},
+          { "id" : "5.3", "duration" : 21, "name" : "Take birth control to regulate menstrual cycle"},
+          { "id" : "5.4", "duration" : 1, "name" : "Attend pre-stims baseline monitoring appointment",
+            "expanded" : false,
+            "children" : [
+              { "id" : "5.4.1", "duration" : 1, "name" : "Blood draw - Check AMH levels > Dictates medication dosage" },
+              { "id" : "5.4.2", "duration" : 1, "name" : "Ultrasound - Check ovaries, antral follicle count, any cysts" },
+              { "id" : "5.4.3", "duration" : 1, "name" : "Receive confirmation to cycle + treatment calendar" }
+            ]},
+          { "id" : "5.5", "duration" : 4, "name" : "Order, receive, document medications",
+            "expanded" : false,
+            "children" : [
+              { "id" : "5.5.1", "duration" : 1, "name" : "Order medications (instructions from clinic)" },
+              { "id" : "5.5.2", "duration" : 2, "name" : "Receive and unpack medications" },
+              { "id" : "5.5.3", "duration" : 1, "name" : "Take pictures of all medications with receipts for record keeping" },
+              { "id" : "5.5.4", "duration" : 1, "name" : "Ensure you have enough medication until you get to the clinic" },
+              { "id" : "5.5.5", "duration" : 1, "name" : "Make sure you have a way to order more meds if you run out" },
+              { "id" : "5.5.6", "duration" : 1, "name" : "Refrigerate lupron and follistim if needed" }
+            ]},
+          { "id" : "5.6", "duration" : 6, "name" : "Prep your emotional survival kit",
+            "children" : [
+              { "id" : "5.6.1", "duration" : 6, "name" : "Design injection administration workbench" },
+              { "id" : "5.6.2", "duration" : 6, "name" : "Create sensory routine around your injection routine" },
+              { "id" : "5.6.3", "duration" : 6, "name" : "Prep nutritious food from Day 1 to minimize discomfort" },
+              { "id" : "5.6.4", "duration" : 6, "name" : "Design injection aftercare strategy to avoid bruising" },
+              { "id" : "5.6.5", "duration" : 6, "name" : "Prepare for 4+ weeks of no / light exercise, no sex" },
+              { "id" : "5.6.6", "duration" : 6, "name" : "Create constipation avoidance strategy" },
+              { "id" : "5.6.7", "duration" : 6, "name" : "Reduce workload (e.g. work / school) where possible" },
+              { "id" : "5.6.8", "duration" : 6, "name" : "Prep: Set social expectations around injection schedule"
+              }]
+          },
+          { "id" : "5.7", "duration" : 0, "name" : "Ready to start stim cycle"
+          }]
+      },
+      {
+        "id"       : "6",
+        "name"     : "Power through egg retrieval cycle",
+        "eventColor" : "blue",
+        "expanded" : false,
+        "children" : [
+          { "id" : "6.1", "duration" : 1, "name" : "Start of stimulation cycle" ,
+            "children" : [
+              { "id" : "6.1.1", "duration" : 1, "name" : "Ice after / apply arnica gel to avoid bruising" },
+              { "id" : "6.1.2", "duration" : 1, "name" : "Let menopur wait for 15min before injecting" },
+              { "id" : "6.1.3", "duration" : 1, "name" : "FYI - 1st injection counts as Day 1"
+              }]
+          },
+          { "id" : "6.2", "duration" : 5, "name" : "Daily injections - stimulating hormones" },
+          { "id" : "6.3", "duration" : 1, "name" : "Bloodwork / Ultrasound (local monitoring)" },
+          { "id" : "6.4", "duration" : 2, "name" : "Travel to retrieval clinic (if needed)" ,
+              "children" : [
+                { "id" : "6.4.1", "duration" : 1, "name" : "Pack all medications, sharps container, alcohol wipes etc" },
+                { "id" : "6.4.2", "duration" : 1, "name" : "Injection needles in lunchbox - do not go through X ray machine" },
+                { "id" : "6.4.3", "duration" : 1, "name" : "Cold pack for any meds that must be kept cold in transit" },
+                { "id" : "6.4.4", "duration" : 1, "name" : "Pack constipation management / nutrition items"
+                }]
+          },
+          { "id" : "6.5", "duration" : 4, "name" : "Bloodwork / Ultrasound daily (local or @ clinic)" },
+          { "id" : "6.6", "duration" : 2, "name" : "Trigger shot timeframe" ,
+              "children" : [
+                { "id" : "6.6.1", "duration" : 1, "name" : "Exact administration depends on protocol" },
+                { "id" : "6.6.2", "duration" : 1, "name" : "1st trigger shot generally taken exactly 36 hours beforehand"
+                }]
+          },
+          { "id" : "6.7", "duration" : 1, "name" : "Bloodwork (assess response to trigger shot)" },
+          { "id" : "6.8", "duration" : 1, "name" : "Egg retrieval BIG DAY" ,
+              "children" : [
+                { "id" : "6.8.1", "duration" : 1, "name" : "Coordinate plan of action with support partner" },
+                { "id" : "6.8.2", "duration" : 1, "name" : "No food or drink 8 hours before" },
+                { "id" : "6.8.3", "duration" : 1, "name" : "Check in to surgery an hour beforehand" },
+                { "id" : "6.8.4", "duration" : 1, "name" : "Actual retrieval (under anesthesia): 30min" },
+                { "id" : "6.8.5", "duration" : 1, "name" : "Recover from anesthesia: 45min" },
+                { "id" : "6.8.6", "duration" : 1, "name" : "Chaperoned back by support partner to rest"}
+              ]},
+          { "id" : "6.9", "duration" : 4, "name" : "Optional: OHSS avoidance injections / meds",
+         "children" : [
+           { "id" : "6.9.1", "duration" : 4, "name" : "E.g. Ganirelix injections" },
+           { "id" : "6.9.2", "duration" : 4, "name" : "E.g. Cabergoline administered vaginally"}
+         ]},
+          { "id" : "6.91", "duration" : 1, "name" : "Cancel all plans for 36 hours and rest"}
+        ]},
+      { "id" : "7",
+        "name"     : "Nutrition, self care, recovery",
+        "eventColor" : "cyan",
+        "expanded" : false,
+        "children" : [
+          { "id" : "7.1", "duration" : 21, "name" : "Diet: High protein, high antioxidant, low carb" },
+          { "id" : "7.2", "duration" : 21, "name" : "Diet: Less sugar" },
+          { "id" : "7.3", "duration" : 14, "name" : "Diet: No alcohol" },
+          { "id" : "7.4", "duration" : 5, "name" : "Diet: Electrolyte-heavy, sodium-heavy drinks" },
+          { "id" : "7.5", "duration" : 14, "name" : "Take daily stool softeners / laxatives" },
+          { "id" : "7.6", "duration" : 28, "name" : "Exercise: No impact that 'would make a ponytail bounce'" },
+          { "id" : "7.7", "duration" : 2, "name" : "Travel home" },
+          { "id" : "7.8", "duration" : 10, "name" : "Highest bloating timeframe",
+            "children" : [
+              { "id" : "7.8.1", "duration" : 10, "name" : "Weigh yourself daily and record the numbers" },
+              { "id" : "7.8.2", "duration" : 10, "name" : "Stick to a high protein, low carb diet" },
+              { "id" : "7.8.3", "duration" : 10, "name" : "Move around a little (don’t just stay in bed)" },
+              { "id" : "7.8.4", "duration" : 10, "name" : "Continue taking your stool softeners (e.g. Miralax)" },
+              { "id" : "7.8.5", "duration" : 10, "name" : "Drink mainly electrolyte-heavy water" },
+              { "id" : "7.8.6", "duration" : 10, "name" : "Avoid carbonated drinks" },
+              { "id" : "7.8.7", "duration" : 10, "name" : "Drink sodium-heavy soup" },
+              { "id" : "7.8.8", "duration" : 10, "name" : "Sleep on an incline - reduce bloating"}
+            ]},
+          {
+            "id": "7.9",
+            "duration": 6,
+            "name": "Timeframe - period arrives",
+            "children": [
+              {"id": "7.9.1", "duration": 6, "name": "Possibility of heavier blood flow"},
+              {"id": "7.9.2", "duration": 6, "name": "Possibility of stronger cramping"},
+              {"id": "7.9.3", "duration": 6, "name": "Body “uses” period to flush out retained fluid"}
+            ]},
+            { "id" : "7.91", "duration" : 6, "name" : "Predicted 'feel good again'" },
+            { "id" : "7.92", "duration" : 30, "name" : "Common lingering side effects",
+            "children" : [
+              { "id" : "7.92.1", "duration" : 30, "name" : "May feel more hot / cold than usual" },
+              { "id" : "7.92.2", "duration" : 30, "name" : "May feel more fatigue / lower stamina" },
+              { "id" : "7.92.3", "duration" : 30, "name" : "May not feel “up to” high impact" },
+              { "id" : "7.92.4", "duration" : 30, "name" : "May experience slightly elevated / depressed mood"}
+            ]}
+        ]},
+      {
+        "id"       : "8",
+        "name"     : "Get paid / reimbursed",
+        "eventColor" : "violet",
+        "duration" : 40,
+        "expanded" : false,
+        "children" : [
+          { "id" : "8.1", "duration" : 21, "name" : "Submit financial details for escrow payouts" },
+          { "id" : "8.2", "duration" : 1, "name" : "Medication (stims) start payment" },
+          { "id" : "8.3", "duration" : 1, "name" : "Medication (stims) end payment" },
+          { "id" : "8.4", "duration" : 1, "name" : "Deadline: Submit all reimbursement expenses" },
+          { "id" : "8.5", "duration" : 1, "name" : "Receive reimbursements" },
+          { "id" : "8.6", "duration" : 0, "name" : "Compensation complete"}
+        ]},
+      { "id" : "9",
+        "name" : "Learn retrieval outcomes",
+        "eventColor" : "blue",
+        "expanded" : false,
+        "children" : [
+          { "id" : "9.1", "duration" : 1, "name" : "Learn # mature eggs retrieved" },
+          { "id" : "9.2", "duration" : 2, "name" : "Learn # embryos fertilized " },
+          { "id" : "9.3", "duration" : 7, "name" : "Embryo culturing (get to Day 7)" },
+          { "id" : "9.4", "duration" : 6, "name" : "Wait for embryo genetic testing results" },
+          { "id" : "9.5", "duration" : 5, "name" : "Learn sex of embryos" },
+          { "id" : "9.6", "duration" : 5, "name" : "Learn # embryos genetically normal"}
+        ]},
+      { "id" : "91",
+        "name" : "Optional: Get ready for next cycle",
+        "eventColor" : "cyan",
+        "expanded" : false,
+        "children" : [
+          { "id" : "91.1", "duration" : 8, "name" : "Collect all medical documents / records",
+            "children" : [
+              { "id" : "91.1.1", "duration" : 8, "name" : "Baseline screening AMH level" },
+              { "id" : "91.1.2", "duration" : 8, "name" : "Baseline screening follicle count" },
+              { "id" : "91.1.3", "duration" : 8, "name" : "Retrieval follicle count" },
+              { "id" : "91.1.4", "duration" : 8, "name" : "Follicle count vs Eggs retrieved" },
+              { "id" : "91.1.5", "duration" : 8, "name" : "Mature eggs" },
+              { "id" : "91.1.6", "duration" : 8, "name" : "Embryos formed by Day 7 + grade " },
+              { "id" : "91.1.7", "duration" : 8, "name" : "Genetic carrier screening results " },
+              { "id" : "91.1.8", "duration" : 8, "name" : "Karyotype test results " },
+              { "id" : "91.1.9", "duration" : 8, "name" : "Psych evaluation results" },
+              { "id" : "91.1.91", "duration" : 8, "name" : "Medication protocol used / treatment calendar"}
+            ]}
+        ]},
+      {
+        "id"       : "92",
+        "name"     : "Optional: Ready for next cycle",
+        "eventColor" : "cyan",
+        "expanded" : false,
+        "children" : [
+          { "id" : "92.1", "duration" : 8, "name" : "Collect all medical documents / records",
+            "children" : [
+              { "id" : "92.1.1", "duration" : 8, "name" : "Baseline screening AMH level" },
+              { "id" : "92.1.2", "duration" : 8, "name" : "Baseline screening AFC level" },
+              { "id" : "92.1.3", "duration" : 8, "name" : "Final AFC at retrieval" },
+              { "id" : "92.1.4", "duration" : 8, "name" : "Follicle count vs Eggs retrieved" },
+              { "id" : "92.1.5", "duration" : 8, "name" : "Mature eggs" },
+              { "id" : "92.1.6", "duration" : 8, "name" : "Embryos formed by Day 7 + grade " },
+              { "id" : "92.1.7", "duration" : 8, "name" : "Genetic carrier screening results " },
+              { "id" : "92.1.8", "duration" : 8, "name" : "Karyotype test results " },
+              { "id" : "92.1.9", "duration" : 8, "name" : "Psych evaluation results" },
+              { "id" : "92.1.91", "duration" : 8, "name" : "Medication protocol used" }
+            ]},
+          { "id" : "92.2", "duration" : 60, "name" : "Ovary recovery - DO NOT start new cycle" },
+          { "id" : "92.3", "duration" : 0, "name" : "Ovaries recovered - can start new cycle" }
+        ]}
+    ]},
+
+
+  "dependencies" : {
+    "rows" : [
+      { "id": 1, "fromEvent": "1.1", "toEvent": "1.3", "lag": 0 },
+      { "id": 2, "fromEvent": "1.3", "toEvent": "1.4", "lag": 0 },
+      { "id": 3, "fromEvent": "1.3", "toEvent": "1.5", "lag": 0 },
+      { "id": 4, "fromEvent": "1.4", "toEvent": "1.6", "lag": 31 },
+      { "id": 5, "fromEvent": "1.1", "toEvent": "2.1", "lag": 1 },
+      { "id": 6, "fromEvent": "1.3", "toEvent": "2.2", "lag": 1 },
+      { "id": 7, "fromEvent": "1.3.2", "toEvent": "2.3", "lag": 0 },
+      { "id": 8, "fromEvent": "1.3", "toEvent": "2.4", "lag": 0 },
+      { "id": 9, "fromEvent": "1.1", "toEvent": "2.5", "lag": 1 },
+      { "id": 10, "fromEvent": "1.3", "toEvent": "2.6", "lag": 1 },
+      { "id": 11, "fromEvent": "1.6", "toEvent": "2.7", "lag": 1 },
+      { "id": 12, "fromEvent": "2.7", "toEvent": "3.1", "lag": 5 },
+      { "id": 13, "fromEvent": "3.1", "toEvent": "3.2", "lag": 1 },
+      { "id": 14, "fromEvent": "3.2", "toEvent": "3.3", "lag": 7 },
+      { "id": 15, "fromEvent": "3.3", "toEvent": "3.4", "lag": 0 },
+      { "id": 16, "fromEvent": "3.4", "toEvent": "3.5", "lag": 0 },
+      { "id": 17, "fromEvent": "2.7", "toEvent": "3.6", "lag": 7 },
+      { "id": 18, "fromEvent": "2.7", "toEvent": "3.8", "lag": 7 },
+      { "id": 19, "fromEvent": "3.7", "toEvent": "3.9", "lag": 7 },
+      { "id": 20, "fromEvent": "3.5", "toEvent": "3.91", "lag": 2 },
+      { "id": 21, "fromEvent": "3.9", "toEvent": "3.91", "lag": 2 },
+      { "id": 22, "fromEvent": "3.8", "toEvent": "3.91", "lag": 2 },
+      { "id": 23, "fromEvent": "3.91", "toEvent": "4.1", "lag": 7 },
+      { "id": 24, "fromEvent": "4.1", "toEvent": "4.2", "lag": 0 },
+      { "id": 25, "fromEvent": "4.2", "toEvent": "4.3", "lag": 0 },
+      { "id": 26, "fromEvent": "4.3", "toEvent": "4.4", "lag": 0 },
+      { "id": 27, "fromEvent": "4.4", "toEvent": "4.5", "lag": 0 },
+      { "id": 28, "fromEvent": "4.5", "toEvent": "4.6", "lag": 0 },
+      { "id": 29, "fromEvent": "4.6", "toEvent": "4.7", "lag": 2 },
+      { "id": 30, "fromEvent": "4.8", "toEvent": "4.9", "lag": 2 },
+      { "id": 31, "fromEvent": "4.9", "toEvent": "4.91", "lag": 0 },
+      { "id": 32, "fromEvent": "5.1", "toEvent": "5.2", "lag": 1 },
+      { "id": 33, "fromEvent": "5.2", "toEvent": "5.3", "lag": 0 },
+      { "id": 34, "fromEvent": "5.3", "toEvent": "5.4", "lag": 0 },
+      { "id": 35, "fromEvent": "4.91", "toEvent": "5.5", "lag": 47 },
+      { "id": 36, "fromEvent": "3.91", "toEvent": "5.5", "lag": 27 },
+      { "id": 37, "fromEvent": "5.2", "toEvent": "5.6", "lag": 14 },
+      { "id": 38, "fromEvent": "5.6", "toEvent": "5.7", "lag": 0 },
+      { "id": 39, "fromEvent": "5.4.3", "toEvent": "5.7", "lag": 1 },
+      { "id": 40, "fromEvent": "5.7", "toEvent": "6.1", "lag": 1 },
+      { "id": 41, "fromEvent": "6.1", "toEvent": "6.2", "lag": 0 },
+      { "id": 42, "fromEvent": "6.1", "toEvent": "6.3", "lag": 5 },
+      { "id": 43, "fromEvent": "6.3", "toEvent": "6.4", "lag": 1 },
+      { "id": 44, "fromEvent": "6.4", "toEvent": "6.5", "lag": 0 },
+      { "id": 45, "fromEvent": "6.5", "toEvent": "6.6", "lag": 0 },
+      { "id": 46, "fromEvent": "6.6", "toEvent": "6.7", "lag": 0 },
+      { "id": 47, "fromEvent": "6.7", "toEvent": "6.8", "lag": 1 },
+      { "id": 48, "fromEvent": "6.8", "toEvent": "6.9", "lag": 0 },
+      { "id": 49, "fromEvent": "6.8", "toEvent": "6.91", "lag": 0 },
+      { "id": 50, "fromEvent": "5.7", "toEvent": "7.1", "lag": 0 },
+      { "id": 51, "fromEvent": "5.7", "toEvent": "7.2", "lag": 0 },
+      { "id": 52, "fromEvent": "5.7", "toEvent": "7.3", "lag": 0 },
+      { "id": 53, "fromEvent": "5.7", "toEvent": "7.4", "lag": 0 },
+      { "id": 54, "fromEvent": "6.4", "toEvent": "7.5", "lag": 0 },
+      { "id": 55, "fromEvent": "5.7", "toEvent": "7.6", "lag": 0 },
+      { "id": 56, "fromEvent": "6.91", "toEvent": "7.7", "lag": 0 },
+      { "id": 57, "fromEvent": "6.6", "toEvent": "7.8", "lag": 0 },
+      { "id": 58, "fromEvent": "6.8", "toEvent": "7.9", "lag": 6 },
+      { "id": 59, "fromEvent": "7.9", "toEvent": "7.91", "lag": 0 },
+      { "id": 60, "fromEvent": "6.8", "toEvent": "7.92", "lag": 0 },
+      { "id": 61, "fromEvent": "4.91", "toEvent": "8.1", "lag": 7 },
+      { "id": 62, "fromEvent": "6.1", "toEvent": "8.2", "lag": 1 },
+      { "id": 63, "fromEvent": "6.8", "toEvent": "8.3", "lag": 1 },
+      { "id": 64, "fromEvent": "7.7", "toEvent": "8.4", "lag": 7 },
+      { "id": 65, "fromEvent": "8.4", "toEvent": "8.5", "lag": 2 },
+      { "id": 66, "fromEvent": "8.5", "toEvent": "8.6", "lag": 1 },
+      { "id": 67, "fromEvent": "6.8", "toEvent": "9.1", "lag": 0 },
+      { "id": 68, "fromEvent": "9.1", "toEvent": "9.2", "lag": 2 },
+      { "id": 69, "fromEvent": "9.1", "toEvent": "9.3", "lag": 6 },
+      { "id": 70, "fromEvent": "9.3", "toEvent": "9.4", "lag": 0 },
+      { "id": 71, "fromEvent": "9.4", "toEvent": "9.5", "lag": 14 },
+      { "id": 72, "fromEvent": "9.5", "toEvent": "9.6", "lag": 0 },
+      { "id": 73, "fromEvent": "8.4", "toEvent": "91.1", "lag": 1 }
+    ]}
+}

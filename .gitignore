@@ -1,0 +1,15 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+crucible_prototype/db.sqlite3
+
+# Virtual environment
+venv
+
+# Environment variable dotfiles
+.env
+.env.local
+
+# Intellij idea folder
+.idea

@@ -1,0 +1,33 @@
+{% extends "onboarding_base.html" %}
+
+{% block title %}Onboarding - Other{% endblock %}
+
+{% block content %}
+
+<div class="onboard-content margin-top-51 subtitle">
+  <div class="reg-flow-header">
+    <form method="post">
+        {% csrf_token %}
+        {% if form.header %}
+            <h2 class="header-welcome no-margin-top">{{ form.header|safe }}</h2>
+        {% endif %}
+        {% if form.subtext %}
+            <p class="body1 onboard-grey-text">{{ form.subtext|safe }}</p>
+        {% endif %}
+        {% for field, field_type in form.get_fields_with_types %}
+            <div class="body1 {{ field_type }}">
+                {{ field }}
+            </div>
+        {% endfor %}
+
+                <div class="onboard-nav-div" style="display:inline">
+                  <button class="onboard-button float-right" type="submit">Next</button>
+                </div>
+    </form>
+  </div>
+</div>
+<div class="progress-container">
+  <div class="complete-progress-bar"></div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,782 @@
+.marcellus-regular {
+  font-family: "Marcellus", serif;
+  font-weight: 400;
+  color: #13171A;
+  font-style: normal;
+}
+
+body, html {
+    font-family: 'Marcellus', serif;
+    color: #13171A;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+main {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+button {
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 25px;
+  cursor: pointer;
+}
+
+.display{
+font-size: 48px;
+font-style: normal;
+font-weight: 400;
+line-height: 140%; /* 67.2px */
+}
+
+
+.reg-flow-left-panel {
+  display: flex;
+  width: 60vw;
+}
+
+.reg-flow-content {
+  width: 100%;
+}
+
+.reg-flow-content p {
+  margin-bottom: 5px;
+}
+
+.password-instructions-card {
+  border: 1px solid #9dc6ff;
+  background-color: #e7f1ff;
+  border-radius: 20px;
+  padding: 5px 15px;
+}
+
+.onboard-container {
+  border: 1px solid #9dc6ff;
+  border-color: #a5a9b2;
+  border-radius: 5px;
+  gap: 16px;
+  padding: 10px 15px;
+  margin-bottom: 3%;
+  align-items: flex-start;
+  word-wrap: break-word;
+}
+
+.reg-flow-button-container {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 40px;
+}
+
+input {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border-color: #a5a9b2;
+  border-width: 1px;
+}
+
+.reg-flow-scrollable-section {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 50vh;
+  padding-right: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.reg-flow-logo-container {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+}
+
+.reg-flow-logo {
+  width: 50px;
+  height:50px;
+  margin: 20px;
+}
+
+.reg-flow-button {
+  background-color: #066dfe;
+  color: white;
+  color: var(--Neutral-Whilte, #FFF);
+  font-family: "DM Sans";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  text-transform: capitalize;
+}
+
+.reg-flow-footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.reg-flow-centered-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.inner-content {
+  display: flex;
+  text-align: left;
+  justify-content: center;
+  width: 450px;
+}
+
+.reg-flow-image-container {
+  flex: 0 0 50%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.reg-flow-username-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 15px;
+}
+
+.reg-flow-username-container > div {
+  flex-grow: 1;
+}
+
+.reg-flow-image-container img {
+  height: 100%;
+  object-fit: contain;
+  width: auto;
+}
+
+.checkboxes-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  margin: 10px 0px;
+}
+
+.checkbox-row {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  margin: 15px 0px;
+}
+
+.checkbox-row input {
+  height: 1.5em;
+  width: 1.5em;
+  vertical-align: -6px;
+  margin-top
+}
+
+#user-type-other-text-input {
+  width: 80%;
+  margin-left: 30px;
+}
+
+.body1 {
+font-family: "DM Sans";
+font-size: 13px;
+font-style: normal;
+font-weight: 400;
+line-height: 140%; /* 18.2px */
+margin-top: auto;
+}
+
+.italic {
+font-style: italic;
+}
+
+.margin-top-auto {
+margin-top: auto
+}
+
+.margin-bottom-6 {
+margin-bottom: 6%;
+}
+
+.carousel-body{
+font-family: "DM Sans";
+font-size: 13px;
+font-style: normal;
+font-weight: 400;
+line-height: 140%; /* 18.2px */
+}
+
+.header-welcome {
+font-family: "DM Sans";
+font-size: 32px;
+font-style: normal;
+color: #13171A;
+font-weight: 500;
+line-height: 140%; /* 33.6px */
+margin-bottom: 0px;
+}
+
+.header-special {
+  font-size: 64px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 140%;
+  margin-top: 3.1%;
+  margin-bottom: 2.2%;
+}
+
+.header1 {
+font-family: "DM Sans";
+font-size: 24px;
+color: #13171A;
+font-style: normal;
+font-weight: 500;
+line-height: 140%; /* 33.6px */
+margin-top: auto;
+margin-bottom: 9px;
+}
+
+.header2 {
+  font-size: 32px;
+  font-weight: 400;
+  color: #13171A;
+}
+
+.header3 {
+  font-size: 28px;
+  font-weight: 400;
+  color: #13171A;
+}
+
+.header4 {
+font-family: "DM Sans";
+font-size: 24px;
+font-style: normal;
+color: #13171A;
+font-weight: 400;
+line-height: 140%; /* 33.6px */
+margin: 0;
+}
+
+.header5 {
+  font-size: 20px;
+  color: #13171A;
+  font-weight: 300;
+  margin: 0;
+}
+.subtitle {
+font-family: "DM Sans";
+font-size: 13px;
+font-style: normal;
+color: #13171A;
+font-weight: 500;
+line-height: normal;
+}
+
+.subtitle-home {
+  font-weight: 200;
+  color: #6F747C;
+}
+
+.link {
+  color: #066DFE;
+  text-decoration: none;
+}
+
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 80vw;
+  justify-content: center;
+  align-items: center;
+  margin-left: 9%;
+  margin-right: 10%;
+}
+
+.nav-bar {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+  justify-content: space-between;
+}
+
+.nav-bar-button {
+  margin-right: 20px;
+}
+
+.icon-nav-bar {
+  width: 40px;
+  height:40px;
+  margin-left: 20px;
+}
+
+.column-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.column {
+  flex: 1;
+}
+
+hr {
+  width: 100%;
+  border: none;
+  height: 2px;
+  background-color: #f2f2f2;
+  margin: 16px 0;
+}
+
+.welcome-container {
+  padding-bottom: 2.5%;
+}
+
+.how-crucible-works {
+  margin: 30px 0;
+  color: white;
+  background-color: #066DFE;
+  border-radius: 20px;
+  padding: 45px;
+}
+
+.coming-soon {
+  background-color: #f2f2f2;
+  width: 100vw;
+}
+
+.coming-soon-body {
+  margin-right: 60px;
+  margin-bottom: 30px;
+}
+
+.row {
+  display: flex;
+  align-items: start;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.gantt-image {
+  width: 700px;
+  height: 543;
+  margin: 60px 0;
+  border-radius: 30px;
+}
+
+.icon {
+  width: 36px;
+  height:36px;
+  margin-right: 20px;
+}
+
+.new-features-header {
+  margin-left: 200px;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  height: 800px;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #fde1ff;
+  padding: 20px 0px;
+}
+
+.carousel-view {
+  width: 99vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 44px 0;
+  transition: all 0.25s ease-in;
+}
+
+.carousel-view .item-list {
+  max-width: 2500px;
+  width: 100vw;
+  padding: 0px;
+  display: flex;
+  gap: 50px;
+  scroll-behavior: smooth;
+  transition: all 0.25s ease-in;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.item-list::-webkit-scrollbar {
+  display: none;
+}
+
+.prev-btn {
+  height: 60px;
+  width: 1vw;
+  padding: 0px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.next-btn {
+  width: 2vw;
+  height: 60px;
+  padding: 0px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.next-btn i {
+  font-size: 1.5em;
+}
+
+.prev-btn i {
+  font-size: 1.5em;
+}
+
+.carousel-item {
+  scroll-snap-align: center;
+  border-radius: 20px;
+  background-color: #F5F5F7;
+  padding: 20px 40px;
+}
+
+.carousel-item img {
+  width: 600px;
+  height: 400px;
+}
+
+.carousel-item p {
+  margin-bottom: 30px;
+}
+
+.upvote-button {
+  color: white;
+  background-color: #066DFE;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.downvote-button {
+  color: #066DFE;
+  border: 2px solid #066DFE;
+  border-radius: 5px;
+}
+
+.notify-button {
+color: white;
+background-color: #066DFE;
+border-radius: 5px;
+margin-right: 10px;
+font-family: "DM Sans";
+font-size: 13px;
+font-style: normal;
+font-weight: 400;
+line-height: 140%; /* 18.2px */
+text-transform: capitalize;
+}
+
+.notify-button i {
+  margin-right: 10px;
+}
+
+.upvote-button i {
+  margin-right: 10px;
+}
+
+.downvote-button i {
+  margin-right: 10px;
+}
+
+.community-gallery {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.community-gallery-button {
+  border-radius: 30px;
+  color: white;
+  background-color: #41c77a;
+}
+
+.community-gallery-button-completed {
+  border-radius: 30px;
+  color: white;
+  background-color: #3E4349;
+}
+
+.community-gallery-container {
+  width: 70vw;
+  margin-bottom: 70px;
+}
+
+.community-gallery-list-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.gallery-button-text {
+  padding-right: 10px;
+}
+
+.footer {
+  display: flex;
+  background-color: #13171A;
+  height: 170px;
+  align-items: center;
+  justify-content: center;
+}
+
+.crucible-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-container {
+  width: 70vw;
+}
+
+.footer-text {
+  display: flex;
+  justify-content: space-between;
+  text-align: end;
+}
+
+.footer-container p {
+  color: white;
+}
+
+.footer-text a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-container hr {
+  height: 1px;
+  background-color: #3e4349;
+}
+
+.required-field::after {
+  content: "*";
+  color: red;
+}
+
+.other-text-field {
+  display: flex;
+  width: 90%;
+  margin-left: 10%
+}
+
+.float-right {
+  float: right;
+}
+
+.onboard-grey-text {
+  color: #6F747C;
+  margin-bottom: 9%;
+}
+
+.form-control {
+  font-family: "DM Sans";
+  width: 100%;
+  height: 48px;
+  font-size: large;
+  border-radius: 5px;
+  border-color: #A5A9B2;
+}
+
+.form-concerns {
+  font-family: "DM Sans";
+  width: 99%;
+  height: auto;
+  font-size: large;
+  border-radius: 5px;
+  border-color: #A5A9B2;
+}
+.datepicker {
+  width: 98.7%;
+}
+
+.construction-image {
+  margin-top: 75px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.construction-text {
+  inline-size: 35%;
+  margin-bottom: 25px;
+}
+
+.construction-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.construction-button {
+  color: white;
+  background-color: #066DFE;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.onboard-nav-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.onboard-centered-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+.no-margin-top {
+  margin-top: 0;
+}
+
+.margin-top-51 {
+  margin-top: 51%
+}
+
+.onboard-content {
+  width: 100%;
+}
+
+.onboard-complete-margin-top {
+  margin-top: 10.7%;
+}
+
+.onboard-scrollable-section {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 66vh;
+  padding-right: 10px;
+  margin-bottom: 20px;
+}
+
+.onboard-button {
+  color: white;
+  background-color: #066DFE;
+  border-radius: 5px;
+}
+
+.calendar {
+  font-family: "DM Sans";
+  height: 44px;
+  font-size: large;
+  border-radius: 5px;
+  border-color: #A5A9B2;
+}
+
+.progress-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1%;
+  background-color: #E7F1FF;
+}
+.sign-up-progress-bar {
+  width: 12%;
+  height: 100%;
+  background-color: #066DFE;
+}
+
+.onboarding-progress-bar {
+  width: 23%;
+  height: 100%;
+  background-color: #066DFE;
+}
+
+
+.complete-progress-bar {
+  width: 100%;
+  height: 100%;
+  background-color: #066DFE;
+}
+
+.vl {
+  border-left: solid;
+  border-color: #E0E2E6;
+  margin-right: 20px;
+  border-width: 2px;
+  height: 100%;
+}
+
+.nav-bar-case-management-button {
+color: white;
+background-color: #066DFE;
+border: none;
+border-radius: 5px;
+margin-right: 20px;
+padding: 10px 25px;
+font-family: "DM Sans";
+font-size: 13px;
+font-style: normal;
+font-weight: 400;
+line-height: 140%; /* 18.2px */
+text-transform: capitalize;
+cursor: pointer;
+text-decoration: none;
+}
+
+.nav-button-container {
+  display: flex;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.onboarding-complete-question-text{
+  color: #13171A;
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.back-link{
+color: #066DFE;
+}

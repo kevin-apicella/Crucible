@@ -1,0 +1,144 @@
+{% extends "onboarding_base.html" %}
+
+{% block title %}Onboarding{% endblock %}
+
+{% block content %}
+
+
+<div class="onboard-content">
+
+  <div class="reg-flow-header">
+    <h1 class="header-welcome onboard-complete-margin-top">One last look</h1>
+    <p class="body1 onboard-grey-text">Here are the answers you have provided. We’ll use these to create your timeline. If
+      you need to make any changes, click "Start over" to edit your responses before submitting.</p>
+    <form method="post">
+      {% csrf_token %}
+    <div class="onboard-scrollable-section">
+    <div class="onboard-container body1">
+      <p class="onboarding-complete-question-text">Have you started your journey?</p>
+      {% if started_journey %}
+      <p>Yes</p>
+      {% else %}
+      <p>No</p>
+      {% endif %}
+    </div>
+
+    {% if role == "IP" %}
+    <div class="onboard-container body1">
+        <p class="onboarding-complete-question-text">Will you be using donor eggs to create embryos?</p>
+        <p class="capitalize">{{ donor_eggs }}</p>
+    </div>
+    <div class="onboard-container body1">
+        <p class="onboarding-complete-question-text">Will you be using donor sperm to create embryos?</p>
+        <p class="capitalize">{{ donor_sperm }}</p>
+    </div>
+    <div class="onboard-container body1">
+        <p class="onboarding-complete-question-text">Will you need to work with a surrogate to carry the pregnancy to term?</p>
+        <p class="capitalize">{{ need_surrogate }}</p>
+    </div>
+
+    {% elif role == "ED" %}
+    <div class="onboard-container body1">
+      <p class="onboarding-complete-question-text">Is this your first time donating eggs?</p>
+      <p>{{ donor_experience }}</p>
+    </div>
+    <div class="onboard-container body1">
+      <p class="onboarding-complete-question-text">Will you be donating to an egg bank?</p>
+      <p>{{ bank_donation }}</p>
+    </div>
+    <div class="onboard-container body1">
+      <p class="onboarding-complete-question-text">Will your donation be managed by an agency?</p>
+      <p>{{ use_agency }}</p>
+    </div>
+
+    {% elif role == "Surrogate" %}
+    <div class="onboard-container body1">
+      <p class="onboarding-complete-question-text">Is this your first surrogacy journey?</p>
+      <p class="onboarding-complete-p">{{ surro_experience }}</p>
+    </div>
+    <div class="onboard-container body1">
+      <p class="onboarding-complete-question-text">Are you willing to travel out of state for the embryo transfer?</p>
+      <p>{{ willing_to_travel }}</p>
+    </div>
+    <div class="onboard-container body1">
+      <p class="onboarding-complete-question-text">Will your journey be managed by an agency?</p>
+      <p>{{ use_agency }}</p>
+    </div>
+    <div class="onboard-container body1">
+      <p class="onboarding-complete-question-text">Are you willing to work with international intended parents?</p>
+      {% if international_ip %}
+      <p>Yes</p>
+      {% else %}
+      <p>No</p>
+      {% endif %}
+    </div>
+    <div class="onboard-container body1">
+      <p class="onboarding-complete-question-text">Do you have a personal stance on termination?</p>
+      <p>{{ termination }} </p>
+    </div>
+    <div class="onboard-container body1">
+      <p class="onboarding-complete-question-text">Do you have a personal stane on getting vaccinated?</p>
+      <p>{{ stance_vaccines }} </p>
+    </div>
+    <div class="onboard-container body1">
+      <p class="onboarding-complete-question-text">Do you have a personal stance on the number of embryos to transfer each time?</p>
+      <p>{{ stance_embryo_transfer }} </p>
+    </div>
+    <div class="onboard-container body1">
+      <p class="onboarding-complete-question-text">Are you open to carrying multiples? (including if a single embryo splits)</p>
+      {% if carry_multiples %}
+      <p>Yes</p>
+      {% else %}
+      <p>No</p>
+      {% endif %}
+    </div>
+    <div class="onboard-container body1">
+      <p class="onboarding-complete-question-text">Are you open to carrying for same-sex intended parents?</p>
+      {% if same_sex_carry %}
+      <p>Yes</p>
+      {% else %}
+      <p>No</p>
+      {% endif %}
+    </div>
+    <div class="onboard-container body1">
+      <p class="onboarding-complete-question-text">Are you open to carrying for IPs who don't share your religion or lifestyle?</p>
+      {% if different_lifestyle_carry %}
+      <p>Yes</p>
+      {% else %}
+      <p>No</p>
+      {% endif %}
+    </div>
+    {% endif %}
+    {% if current_milestone != None %}
+    <div class="onboard-container body1">
+      <p class="onboarding-complete-question-text">Where are you in the journey right now?</p>
+      <p>{{ current_milestone }}</p>
+    </div>
+    <div class="onboard-container body1">
+      <p class="onboarding-complete-question-text">What milestone do you want to achieve, and by when?</p>
+      <p>{{ next_milestone }}</p>
+      <p> {{ converted_date }}</p>
+    </div>
+    {% elif next_milestone != None %}
+    <div class="onboard-container body1">
+      <p class="onboarding-complete-question-text">What milestone do you want to achieve, and by when?</p>
+      <p>{{ next_milestone }}</p>
+      <p> {{ converted_date }}</p>
+    </div>
+    {% endif %}
+    <div class="onboard-container body1">
+      <p class="onboarding-complete-question-text">What are you most worried about?</p>
+      <p>{{ concerns }}</p>
+    </div>
+    </div>
+    <div class="onboard-nav-div">
+      <a href="{% url 'onboarding_start'  %}" class="back-link">Start over</a>
+      <button class="upvote-button float-right" type="submit">Submit</button>
+    </div>
+    </form>
+  </div>
+</div>
+<div class="progress-container">
+  <div class="complete-progress-bar"></div>
+</div>
+{% endblock %}

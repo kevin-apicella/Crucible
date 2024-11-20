@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="login-content">
+    <p class="header1">Welcome</p>
+    <p class="subtitle-home">We can't wait to show you what we're working on.</p>
+    <p class="subtitle-home">To get started, please sign in</p>
+    <a class="link" href="{% url 'login' %}">Sign In</a>
+</div>
+{% endblock %}

@@ -1,0 +1,299 @@
+{% extends "landing_page_base.html" %}
+{% block content %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<div>
+    <div class="nav-bar">
+        {% load static %}
+      <img class="icon-nav-bar" src="{% static 'images/crucible-logo.png' %}" alt="Crucible">
+      <div class="nav-button-container">
+          {% if show_button %}
+          <a href="{% url 'timeline' %}" class="nav-bar-case-management-button">
+            Manage your journey
+          </a>
+        <div class="vl"></div>
+          {% endif %}
+        <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button class="nav-bar-button body1" type="submit">Sign Out</button>
+        </form>
+      </div>
+    </div>
+    <hr>
+    <div class="landing-page">
+        <div class="welcome-container">
+            <p class="header-special">Thanks for signing up.</p>
+            <hr>
+            <div class="column-container">
+                <div class="column">
+                    <p class="header1">Re-inventing how it looks, feels, and costs to team up with donors.</p>
+                </div>
+                <div class="column">
+                    <p class="body1">Managing a donor-assisted family building journey is profound - but
+                        can be exhausting. We've spent years studying over a thousand journeys globally, and
+                        are building a tool to free up your headspace in a less expensive, more effective way.</p>
+                </div>
+            </div>
+        </div>
+        <div class="how-crucible-works">
+            <div class="column-container">
+                <div class="column">
+                    <p class="display margin-top-auto">Help our research effort.</p>
+                </div>
+                <div class="column">
+                    <div class="row">
+                        {% load static %}
+                        <img class="icon" src="{% static 'images/reaching-out.png' %}" alt="Reaching out">
+                        <div>
+                            <p class="header1">Look out for an email</p>
+                            <p class="body1 margin-bottom-6" >A real person (not AI, haha) will reach out to learn about where you are in your journey,
+                                what you need to achieve by when, and roadblocks.  We won’t share your information w/o consent.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        {% load static %}
+                        <img class="icon" src="{% static 'images/creating-your-timeline.png' %}" alt="Creating your timeline">
+                        <div>
+                            <p class="header1">We will create your timeline</p>
+                            <p class="body1 margin-bottom-6" >Within a week, we’ll build out and fine-tune your personalized
+                                timeline. (Just for now, to save time, we’re using Asana.)</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        {% load static %}
+                        <img class="icon" src="{% static 'images/where-you-lead.png' %}" alt="Where you lead">
+                        <div>
+                            <p class="header1">Where you lead, we will follow</p>
+                            <p class="body1">You will be able to lean on this timeline as a to-do list and edit it as you go.
+                                If your journey is active, we will stay close to help you.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="coming-soon">
+        <div class="column-container">
+            <div class="column">
+                {% load static %}
+                <img class="gantt-image" src="{% static 'images/gantt-preview.jpg' %}" alt="Gantt Preview">
+            </div>
+            <div class="column">
+                <div class="coming-soon-body">
+                    <p class="display">Coming soon</p>
+                    <p class="body1 italic">“I don’t know what I don’t know." <br>
+                                            "Just tell me what to do...." <br>
+                                            "...but then actually let me decide what actually to do.”
+                    </p>
+                    <p class="body1">
+                        Pairing technology, design and expertise, Crucible will create a first draft
+                        of your entire journey end to end, helping you visualize success, and every step it
+                        takes to get there.
+                    </p>
+                    <p class="body1">Then, you can make unlimited edits til you’re satisfied, and
+                        co-author it to the end - all for $39/mo.
+                    </p>
+                    <p class="body1">
+                        Unlike other guidance on the market, your Crucible timeline isn’t a one-off infographic or a
+                        static screenshot. It’s the live, load-bearing plot of your story - 100% personalized for you.
+                    </p>
+                    <p class="body1">
+                        (To eliminate any disruption, if you’re on an active
+                        journey with us, we’ll port your timeline directly into Crucible - no action needed.)
+                    </p>
+                </div>
+                <button class="notify-button" onclick="NotifyMe()"><i class="fas fa-circle-plus"></i>Notify Me When Ready</button>
+
+            </div>
+        </div>
+    </div>
+    <div class="features">
+        <p class="new-features-header display">Features we are working on</p>
+        <div class="container">
+            <div class="carousel-view">
+                <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <div class="item-list">
+                    <div class="carousel-item">
+                        <p class="header1">Timeline</p>
+                        {% load static %}
+                        <img src="{% static 'images/timeline-view-gantt.png' %}" alt="Timeline View Preview">
+                        <p class="carousel-body">Your trustworthy birds-eye view with milestones, dependencies & warnings.</p>
+                        <button class="upvote-button" onclick="addToCarouselPref('YA', 1) "><i class="fas fa-thumbs-up"></i>I Like This!</button>
+                        <button class="downvote-button" onclick="addToCarouselPref('NO', 1)"><i class="fas fa-thumbs-down"></i>Not Useful To Me</button>
+                    </div>
+                    <div class="carousel-item">
+                        <p class="header1">To-do list</p>
+                        {% load static %}
+                        <img src="{% static 'images/list-view-gantt.png' %}" alt="List View Gantt">
+                        <p class="carousel-body">No need to see the calendar? Use this to focus in on what you need to do.</p>
+                        <button class="upvote-button" onclick="addToCarouselPref('YA', 2)"><i class="fas fa-thumbs-up"></i>I Like This!</button>
+                        <button class="downvote-button" onclick="addToCarouselPref('NO', 2)"><i class="fas fa-thumbs-down"></i>Not Useful To Me</button>
+                    </div>
+                    <div class="carousel-item">
+                        <p class="header1">Collaborate</p>
+                        {% load static %}
+                        <img src="{% static 'images/collaborate-gantt.png' %}" alt="Collaborate Gantt">
+                        <p class="carousel-body">Get on the same page with your partner / donor / surrogate - literally.</p>
+                        <button class="upvote-button" onclick="addToCarouselPref('YA', 3)"><i class="fas fa-thumbs-up"></i>I Like This!</button>
+                        <button class="downvote-button" onclick="addToCarouselPref('NO', 3)"><i class="fas fa-thumbs-down"></i>Not Useful To Me</button>
+                    </div>
+                    <div class="carousel-item">
+                        <p class="header1">Add your Google Calendar</p>
+                        {% load static %}
+                        <img src="{% static 'images/add-to-calendar-gantt.png' %}" alt="Add to Calendar Gantt">
+                        <p class="carousel-body">For those who want to visualize black-out dates on your journey timeline.</p>
+                        <button class="upvote-button" onclick="addToCarouselPref('YA', 4)"><i class="fas fa-thumbs-up"></i>I Like This!</button>
+                        <button class="downvote-button" onclick="addToCarouselPref('NO', 4)"><i class="fas fa-thumbs-down"></i>Not Useful To Me</button>
+                    </div>
+                    <div class="carousel-item">
+                        <p class="header1">Delegate to Crucible</p>
+                        {% load static %}
+                        <img src="{% static 'images/delegate-to-crucible-gantt.png' %}" alt="Delegate to Crucible">
+                        <p class="carousel-body">Delegate an “a la carte” work stream to Crucible without a “full services” fee.</p>
+                        <button class="upvote-button" onclick="addToCarouselPref('YA', 5)"><i class="fas fa-thumbs-up"></i>I Like This!</button>
+                        <button class="downvote-button" onclick="addToCarouselPref('NO', 5)"><i class="fas fa-thumbs-down"></i>Not Useful To Me</button>
+                    </div>
+                    <div class="carousel-item">
+                        <p class="header1">Outreach to Vendor</p>
+                        {% load static %}
+                        <img src="{% static 'images/outreach-to-vendor-gantt.png' %}" alt="Outreach to Vendor Gantt">
+                        <p class="carousel-body">No more 98-email-long threads. Crucible updates your contact book like magic.</p>
+                        <button class="upvote-button" onclick="addToCarouselPref('YA', 6)"><i class="fas fa-thumbs-up"></i>I Like This!</button>
+                        <button class="downvote-button" onclick="addToCarouselPref('NO', 6)"><i class="fas fa-thumbs-down"></i>Not Useful To Me</button>
+                    </div>
+                    <div class="carousel-item">
+                        <p class="header1">Ask a Question</p>
+                        {% load static %}
+                        <img src="{% static 'images/ask-a-question-gantt.png' %}" alt="Ask a Question Gantt">
+                        <p class="carousel-body">We’ll support 1:1 expert Q&A, but also crowdsourced wisdom through AI.</p>
+                        <button class="upvote-button" onclick="addToCarouselPref('YA', 7)"><i class="fas fa-thumbs-up"></i>I Like This!</button>
+                        <button class="downvote-button" onclick="addToCarouselPref('NO', 7)"><i class="fas fa-thumbs-down"></i>Not Useful To Me</button>
+                    </div>
+                </div>
+                <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+        {%  load static %}
+        <script src="{% static 'js/carousel.js' %}"></script>
+    </div>
+
+    <script>
+        function addToAudit(val, url) {
+
+            $.ajax({
+                type: 'POST',
+                url: '{% url "audit_submission" %}',
+                data: {
+                    'action_id_value': val,
+                    'csrfmiddlewaretoken': '{{ csrf_token }}'
+                },
+                success: function(response) {
+                    if (response.status === 'success') {
+                        window.open(url, '_blank');
+                    } else {
+                        alert('Error: ' + response.message);
+                    }
+                }
+            });
+        }
+    </script>
+    <div class="community-gallery">
+        <div class="community-gallery-container">
+            <p class="display">Community gallery walk</p>
+            <div class="community-gallery-list">
+                <div class="community-gallery-list-item">
+                    <p class="header1">Laura</p>
+                    <p class="header4">Egg donor</p>
+                    <button class="community-gallery-button body1" onclick="addToAudit(1, '/gallery_details/?image=laura_gantt.jpg')">
+                        <span class="gallery-button-text">In Progress</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <hr>
+                <div class="community-gallery-list-item">
+                    <p class="header1">John</p>
+                    <p class="header4">Intended parent</p>
+                    <button class="community-gallery-button body1" onclick="addToAudit(2, '/gallery_details/?image=john_gantt.jpg')">
+                        <span class="gallery-button-text">In Progress</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <hr>
+                <div class="community-gallery-list-item">
+                    <p class="header1">Katherine</p>
+                    <p class="header4">Egg donor</p>
+                    <button class="community-gallery-button-completed body1" onclick="addToAudit(3, '/gallery_details/?image=katherine_gantt.jpg')">
+                        <span class="gallery-button-text">Completed</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <hr>
+                <div class="community-gallery-list-item">
+                    <p class="header1">James</p>
+                    <p class="header4">Intended parent</p>
+                    <button class="community-gallery-button body1" onclick="addToAudit(4, '/gallery_details/?image=james_gantt.jpg')">
+                        <span class="gallery-button-text">In Progress</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-container">
+            <div class="footer-text">
+                <div class="crucible-logo">
+                    {% load static %}
+                    <img class="icon-nav-bar" src="{% static 'images/crucible-logo.png' %}" alt="Crucible">
+                    <p class="header2">Crucible</p>
+                </div>
+                <div>
+                    <p class="subtitle">Contact us</p>
+                    <a class="body1" href="mailto:contact@crucible.care">contact@crucible.care</a>
+                </div>
+            </div>
+            <hr>
+            <p class="body1">© 2024 Crucible. All rights reserved.</p>
+        </div>
+    </div>
+</div>
+<script>
+        function addToCarouselPref(choice, carousel_id) {
+
+            $.ajax({
+                type: 'POST',
+                url: '{% url "carousel_submission" %}',
+                data: {
+                    'member_like_response': choice,
+                    'carousel_preferences_id': carousel_id,
+                    'csrfmiddlewaretoken': '{{ csrf_token }}'
+                },
+                success: function(response) {
+                    if (response.status === 'success') {
+                        alert('Got it, we will make a note. Thank you for the feedback!');
+                    } else {
+                        alert('Error: ' + response.message);
+                    }
+                }
+            });
+        }
+</script>
+<script>
+        function NotifyMe() {
+
+            $.ajax({
+                type: 'POST',
+                url: '{% url "notify_me_submission" %}',
+                data: {
+                    'csrfmiddlewaretoken': '{{ csrf_token }}'
+                },
+                success: function(response) {
+                    if (response.status === 'success') {
+                        alert('Thank you for your interest!');
+                    } else {
+                        alert('Thank you for your interest!');
+                    }
+                }
+            });
+        }
+</script>
+{% endblock %}

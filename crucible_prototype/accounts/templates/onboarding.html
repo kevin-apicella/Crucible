@@ -1,0 +1,102 @@
+{% extends "onboarding_base.html" %}
+
+{% block title %}Onboarding{% endblock %}
+
+{% block content %}
+<style>
+  .onboarding-progress-bar {
+    width: {{ progress_percentage |add:"23"}}%;
+    height: 100%;
+    background-color: #066DFE;
+}
+</style>
+
+<div class="onboard-content margin-top-51 subtitle">
+  <div class="reg-flow-header">
+    <form method="post">
+        {% csrf_token %}
+        {% if form.header %}
+            <h2 class="header-welcome no-margin-top">{{ form.header|safe }}</h2>
+        {% endif %}
+        {% if form.subtext %}
+            <p class="body1 onboard-grey-text">{{ form.subtext|safe }}</p>
+        {% endif %}
+        {% for field, field_type in form.get_fields_with_types %}
+            <div class="body1 {{ field_type }}">
+                {{ field }}
+            </div>
+        {% endfor %}
+
+            {% if step > 1 %}
+                <div class="onboard-nav-div">
+                  <a href="{% url 'onboarding' role=role step=previous_step %}" class="back-link">Back</a>
+                  <button class="onboard-button float-right" type="submit">Next</button>
+                </div>
+
+            {% elif step == 1 %}
+                <div class="onboard-nav-div">
+                  <a href="{% url 'onboarding' role=role step=previous_step %}" class="back-link">Back</a>
+                  <button class="onboard-button float-right" type="submit">Next</button>
+                </div>
+            {% else %}
+                <div class="onboard-nav-div" style="display:inline">
+                  <button class="onboard-button float-right" type="submit">Next</button>
+                </div>
+            {% endif %}
+    </form>
+  </div>
+</div>
+<div class="progress-container">
+  <div class="onboarding-progress-bar"></div>
+</div>
+<script>
+    var preferenceDurations = {{ form.milestone_durations|safe }};
+</script>
+<script>
+$(document).ready(function() {
+    var $datepicker = $(".datepicker");
+    var $preferenceSelect = $("#milestone-select");
+
+    $datepicker.hide();
+
+    $datepicker.datepicker({
+        dateFormat: 'yy-mm-dd',
+        changeMonth: true,
+        changeYear: true
+    });
+
+    $datepicker.attr('readonly', 'readonly');
+
+    $datepicker.on('keydown keyup paste', function(event) {
+        event.preventDefault();
+    });
+
+    $preferenceSelect.change(function() {
+        var selectedPreference = $(this).val();
+        if (selectedPreference) {
+            var duration = preferenceDurations[selectedPreference];
+            if (duration) {
+                var minDate = new Date();
+                minDate.setDate(minDate.getDate() + parseInt(duration));
+
+                $datepicker.datepicker("option", "minDate", minDate);
+                $datepicker.show();
+            } else {
+                console.error("Durations not found");
+            }
+        } else {
+            $datepicker.hide();
+        }
+    });
+});
+</script>
+<script>
+    (function () {
+    window.onpageshow = function(event) {
+        if (event.persisted) {
+            window.location.reload();
+        }
+    };
+})();
+</script>
+{% endblock %}

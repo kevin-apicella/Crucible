@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="reg-flow-content">
+  <div class="reg-flow-header">
+    <h1 class="header-welcome">Welcome back</h1>
+    <p class="subtitle">To get started, please sign in</p>
+  </div>
+  <form method="post">
+    {% csrf_token %}
+    <div class="form-container subtitle">
+      <p>Email</p>
+      {{ form.username }}
+      <p>Password</p>
+      {{ form.password }}
+    </div>
+    {{ form.errors }}
+    <div class="reg-flow-button-container">
+      <button class="reg-flow-button" type="submit">Sign In</button>
+    </div>
+  </form>
+  <hr>
+  <div class="reg-flow-footer-container subtitle">
+    <p>Forgot your password?   <a class="link" href="{% url 'password_reset' %}">Click here</a></p>
+    <p>Don't have an account? <a class="link" href="{% url 'signup' %}">Sign Up</a></p>
+  </div>
+</div>
+{% endblock %}

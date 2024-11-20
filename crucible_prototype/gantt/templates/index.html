@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="{% static 'css/gantt.stockholm.css' %}" data-bryntum-theme>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" data-bryntum-theme>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <meta contentType="text/css" charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timeline</title>
+  </head>
+  <body id="body">
+    <div class="top-nav">
+      <div class="gantt-logo-container">
+        <a href="{% url 'landing_page' %}">
+          <img class="gantt-logo" src="{% static 'images/crucible-logo.png' %}" alt="Crucible">
+        </a>
+      </div>
+      <div class="nav-buttons-container">
+        <a href="{% url 'landing_page' %}" class="gantt-nav-button">
+          <i class="fas fa-house"></i> Home
+        </a>
+        <a href="" class="gantt-nav-button-disabled">
+          <i class="fas fa-list"></i> List
+        </a>
+        <a href="{% url 'timeline' %}" class="gantt-nav-button">
+          <i class="fas fa-bars-staggered"></i>Timeline
+        </a>
+        <a href="" class="gantt-nav-button-disabled">
+          <i class="fas fa-address-book"></i> Contact
+        </a>
+      </div>
+      <div class="right-buttons-container">
+        <a href="mailto:help@crucible.care" class="gantt-nav-get-help-button" class="tooltip-help" title="I need help">
+          <i class="fas fa-question" class="tooltiptext-help"></i>
+        </a>
+        <form action="{% url 'logout' %}" method="post">
+          {% csrf_token %}
+          <button class="gantt-nav-log-out-button" type="submit">Sign Out</button>
+        </form>
+      </div>
+    </div>
+    <div id="gantt-container">
+      <script type="module" src="{% static 'js/main.js' %}"></script>
+    </div>
+  </body>
+</html>

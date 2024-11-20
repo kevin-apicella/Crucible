@@ -1,0 +1,337 @@
+@charset "UTF-8";
+:root {
+  font-family: "DM Sans", Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#gantt-container {
+  height: calc(100vh - 7vh); /* subtract the height of the top nav bar */
+  width: 100vw;
+  position: fixed;
+  top: 7vh;
+}
+
+#gantt-container body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  /* min-height: 100vh; */
+}
+
+.top-nav {
+  background-color: #ffffff;
+  height: 7vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  justify-content: space-between;
+}
+
+.gantt-logo-container {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+}
+
+.gantt-logo {
+  width: 50px;
+  height:50px;
+  margin: 20px;
+}
+
+.nav-buttons-container {
+  display: flex;
+}
+
+.gantt-nav-button {
+  color: #3b3b3b;
+}
+.gantt-nav-button:hover {
+  color: #3b3b3b;
+  background-color: #edf4ff;
+  border-radius: 7px;
+}
+
+.gantt-nav-button, .gantt-nav-button-disabled {
+  padding: 10px 20px;
+  margin-right: 30px;
+}
+.gantt-nav-button-disabled {
+  color: #959595;
+  pointer-events: none;
+  cursor: default;
+}
+
+.gantt-nav-button i {
+  margin-right: 5px;
+}
+
+.gantt-nav-button-disabled i {
+  margin-right: 5px;
+}
+
+.nav-buttons-container a:last-child {
+  margin-right: 0;
+}
+
+.gantt-nav-log-out-button {
+  margin-right: 20px;
+  color: #3b3b3b;
+  padding: 10px 15px;
+  background-color: #f4f4f4;
+  border-radius: 7px;
+}
+
+.gantt-nav-log-out-button:hover {
+  background-color: #e6e6e6;
+  color: #3b3b3b;
+}
+
+.gantt-nav-get-help-button {
+  color: #3b3b3b;
+}
+
+.right-buttons-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.vanilla:hover {
+  filter: drop-shadow(0 0 2em #f7df1eaa);
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  color: #3E4349;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.tooltip-help {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-help:hover .tooltiptext-help {
+  visibility: visible;
+}
+
+.b-gantt-task {
+  border-radius : 10px;
+}
+
+.b-gantt {
+  width  : 100%;
+  height : 100%;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+.b-taskboard,
+.b-gantt{
+  --taskboard-column-gap:0;
+  --taskboard-column-background:#f3f4f5;
+  --taskboard-column-header-color:#667280;
+  --taskboard-column-header-font-size:.9em;
+  --taskboard-column-header-font-weight:500;
+  --taskboard-card-header-color:var(--taskboard-column-header-color);
+  --taskboard-card-header-font-weight:500;
+  --taskboard-card-background:#fff;
+  --taskboard-card-box-shadow:none;
+  --border-color:#d8d9da;
+}
+
+.b-theme-classic-dark .b-taskboard,
+.b-theme-classic-dark .b-gantt{
+  --taskboard-column-background:#44444a;
+  --taskboard-column-header-color:#c0c1c2;
+  --taskboard-card-background:#38383c;
+  --taskboard-column-header-font-size:1em;
+  --border-color:#2b2b2f;
+}
+
+.b-theme-classic .b-taskboard,
+.b-theme-classic .b-gantt{
+  --taskboard-column-background:#e0e0e7;
+  --taskboard-column-header-color:#262626;
+  --taskboard-column-header-font-size:1em;
+  --border-color:#b0b0b7;
+}
+.b-theme-classic .b-splitter{
+  background-color:#cbcbcf;
+}
+
+.b-theme-classic-light .b-taskboard,
+.b-theme-classic-light .b-gantt{
+  --taskboard-column-background:#f9f9f9;
+  --taskboard-column-header-color:#565656;
+  --taskboard-column-header-font-size:1em;
+  --border-color:#e0e0e0;
+}
+.b-theme-classic-light .b-splitter{
+  background-color:#e0e0e0;
+}
+
+.b-theme-material .b-taskboard,
+.b-theme-material .b-gantt{
+  --taskboard-column-background:#fafafa;
+  --taskboard-column-header-color:#757575;
+  --taskboard-column-header-font-size:1em;
+  --border-color:#e0e0e0;
+}
+.b-theme-material .b-splitter{
+  background-color:#ebebeb;
+}
+
+.b-taskboard-column-header:not(.b-last),
+.b-taskboard-column:not(.b-last){
+  border-inline-end:1px solid var(--border-color);
+}
+
+.b-taskboard-card{
+  border:1px solid var(--border-color);
+}
+
+.b-taskboard-color-gantt-green{
+  color:#8ee997;
+}
+
+.b-taskboard-color-pale-amber{
+  color:#4fc4ff;
+}
+
+.b-taskboard-color-pale-teal{
+  color:#b2dfdb;
+}
+
+.b-taskboard-color-gantt-blue{
+  color:#83b5fe;
+}
+
+.status-tag{
+  background:var(--taskboard-column-background);
+  display:flex;
+  align-items:center;
+  gap:0.5em;
+  border:1px solid var(--border-color);
+  padding:0.5em;
+  border-radius:5px;
+  font-size:0.8em;
+  text-transform:uppercase;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.status-tag div{
+  color:var(--taskboard-column-header-color);
+}
+
+.b-taskboard-card-header::before,
+.b-taskboard-column-header-padder::before,
+.status-tag::before{
+  content:" ";
+  min-width:10px;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:currentColor;
+  align-self:center;
+}
+
+.b-taskboard-card-body .b-taskboard-template{
+  display:grid;
+  grid-template-columns:70px 1fr;
+  align-items:center;
+}
+
+.b-taskboard-template div{
+  font-size:0.8em;
+}
+
+.b-button {
+  background-color: white;
+}
+
+.b-add-task-button {
+  color: white;
+  background-color: #066DFE;
+  border-radius: 7px;
+}
